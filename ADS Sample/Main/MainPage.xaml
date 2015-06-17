@@ -9,6 +9,5 @@
 	Title="Main">
 
     <Grid>
-        <Image Source="/Splash/Splash.png"/>
     </Grid>
 </Page>
