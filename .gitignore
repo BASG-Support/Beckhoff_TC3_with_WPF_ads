@@ -229,3 +229,12 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+*.~u
+*.tclrs
+*.compileinfo
+*.app
+*.cid
+*.crc
+*.occ
+*.tizip
+*.autostart

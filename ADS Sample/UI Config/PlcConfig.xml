@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Plc AmsNetId="0.0.0.0.0.0" AmsPort="851">
+  <PlcVar Name="GVL_DIO.Digital_Output[1]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="0"/>
+  <PlcVar Name="GVL_DIO.Digital_Output[2]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="1"/>
+  <PlcVar Name="GVL_DIO.Digital_Output[3]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="2"/>
+  <PlcVar Name="GVL_DIO.Digital_Output[4]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="3"/>
+  <PlcVar Name="GVL_DIO.Digital_Output[5]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="4"/>
+  <PlcVar Name="GVL_DIO.Digital_Input[1]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DI" Index="5"/>
+  <PlcVar Name="GVL_DIO.Digital_Input[2]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DI" Index="6"/>
+  <PlcVar Name="GVL_DIO.Digital_Input[3]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DI" Index="7"/>
+  <PlcVar Name="GVL_DIO.Digital_Input[4]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DI" Index="8"/>
+  <PlcVar Name="GVL_DIO.Digital_Input[5]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DI" Index="9"/>
+  <AxsVar Count="ServoMotion_Parameters.MAX_AXES" PlcToHmi="ServoMotion_GVL.PlcToHmi" P2HSize="56" HmiToPlc="ServoMotion_GVL.HmiToPlc" H2PSize="64"/>
+</Plc>
+

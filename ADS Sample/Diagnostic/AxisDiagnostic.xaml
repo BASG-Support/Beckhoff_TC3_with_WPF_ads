@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="ADS_Sample.AxisDiagnostic"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="700" Background="Gray">
+    <Grid>
+        <Label x:Name="AxisLabel" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="80" Height="20"/>
+        <Button x:Name="ControlSet" Content="Set" HorizontalAlignment="Left" Height="25" Margin="10,94,0,0" VerticalAlignment="Top" Width="75" Click="ControlSet_Click"/>
+        <Button x:Name="JogFwFast" Content="Jog ++" HorizontalAlignment="Left" Height="24" Margin="10,138,0,0" VerticalAlignment="Top" Width="97" PreviewMouseUp="JogFwFast_MouseUp" PreviewMouseDown="JogFwFast_MouseDown"/>
+        <Button x:Name="JogBwFast" Content="Jog --" HorizontalAlignment="Left" Height="24" Margin="10,167,0,0" VerticalAlignment="Top" Width="97" PreviewMouseDown="JogBwFast_MouseDown" PreviewMouseUp="JogBwFast_MouseUp"/>
+        <Button x:Name="JogFwSlow" Content="Jog +" HorizontalAlignment="Left" Height="24" Margin="115,138,0,0" VerticalAlignment="Top" Width="97" PreviewMouseDown="JogFwSlow_MouseDown" PreviewMouseUp="JogFwSlow_MouseUp"/>
+        <Button x:Name="JogBwSlow" Content="Jog -" HorizontalAlignment="Left" Height="24" Margin="115,167,0,0" VerticalAlignment="Top" Width="97" PreviewMouseDown="JogBwSlow_MouseDown" PreviewMouseUp="JogBwSlow_MouseUp"/>
+        <Button x:Name="AxisReset" Content="Reset" HorizontalAlignment="Left" Height="24" Margin="217,138,0,0" VerticalAlignment="Top" Width="97" Click="AxisReset_Click"/>
+        <CheckBox x:Name="AxisReady" Content="Ready" HorizontalAlignment="Left" Margin="379,10,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="AxisCalibrated" Content="Calibrated" HorizontalAlignment="Left" Margin="379,35,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="AxisHasJob" Content="Has Job" HorizontalAlignment="Left" Margin="379,60,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="AxisNotMoving" Content="NOT Moving" HorizontalAlignment="Left" Margin="479,10,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="AxisMovingFw" Content="Moving Fw" HorizontalAlignment="Left" Margin="479,35,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="AxisMovingBw" Content="Moving Bw" HorizontalAlignment="Left" Margin="479,60,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="AxisCoupled" Content="Coupled Mode" HorizontalAlignment="Left" Margin="579,10,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="AxisInTarget" Content="In Target Pos." HorizontalAlignment="Left" Margin="579,35,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="AxisInRange" Content="In Pos. Range" HorizontalAlignment="Left" Margin="579,60,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="AxisController" Content="Controller" HorizontalAlignment="Left" Margin="379,85,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="AxisFeedFw" Content="Feed Fw" HorizontalAlignment="Left" Margin="479,85,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="AxisFeedBw" Content="Feed Bw" HorizontalAlignment="Left" Margin="579,85,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="AxisError" Content="Error" HorizontalAlignment="Left" Margin="379,110,0,0" VerticalAlignment="Top"/>
+        <Slider x:Name="AxisOverride" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Maximum="100" SmallChange="1" LargeChange="10" Interval="25" Width="71"/>
+        <TextBox x:Name="AxisOverrideDisplay" HorizontalAlignment="Left" Height="25" Margin="10,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73" IsEnabled="False"/>
+        <TextBox x:Name="AxisActualPosition" HorizontalAlignment="Left" Height="25" Margin="10,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="AxisSetPosition" HorizontalAlignment="Left" Height="25" Margin="160,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="AxisActualVelocity" HorizontalAlignment="Left" Height="25" Margin="10,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="AxisSetVelocity" HorizontalAlignment="Left" Height="25" Margin="160,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <CheckBox x:Name="EnableControl" Content="Enable Control" HorizontalAlignment="Left" Margin="88,38,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="EnableFw" Content="Enable Fw" HorizontalAlignment="Left" Margin="88,56,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="EnableBw" Content="Enable Bw" HorizontalAlignment="Left" Margin="88,74,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="AxisErrorID" HorizontalAlignment="Left" Height="25" Margin="423,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73" IsEnabled="False"/>
+    </Grid>
+</UserControl>

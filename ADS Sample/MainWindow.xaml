@@ -1,0 +1,15 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Control="clr-namespace:ADS_Sample.Control" x:Class="ADS_Sample.MainWindow"
+        Title="MainWindow" Height="600" Width="800" Closing="Window_Closing">
+    <Grid>
+        <Frame x:Name="ContentFrame" Margin="0,0,0,80" Background="Gray" Source="Main\MainPage.xaml" NavigationUIVisibility="Hidden"/>
+        <StackPanel Height="50" Margin="0,0,0,10" VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="navi_main" Content="MAIN" HorizontalAlignment="Left" Height="50" Margin="10,0,10,0" Width="100" Click="navi_main_Click" />
+            <Button x:Name="navi_recipe" Content="RECIPE" HorizontalAlignment="Left" Height="50" Margin="10,0,10,0" Width="100" />
+            <Button x:Name="navi_settings" Content="SETTINGS" HorizontalAlignment="Left" Height="50" Margin="10,0,10,0" Width="100" />
+            <Button x:Name="navi_diagnostic" Content="DIAGNOSTIC" HorizontalAlignment="Left" Height="50" Margin="10,0,10,0" Width="100" Click="navi_diagnostic_Click" />
+        </StackPanel>
+    </Grid>
+</Window>
