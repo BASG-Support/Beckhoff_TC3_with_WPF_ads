@@ -22,10 +22,9 @@
         <CheckBox x:Name="AxisCoupled" Content="Coupled Mode" HorizontalAlignment="Left" Margin="579,10,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="AxisInTarget" Content="In Target Pos." HorizontalAlignment="Left" Margin="579,35,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="AxisInRange" Content="In Pos. Range" HorizontalAlignment="Left" Margin="579,60,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="AxisController" Content="Controller" HorizontalAlignment="Left" Margin="379,85,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="AxisFeedFw" Content="Feed Fw" HorizontalAlignment="Left" Margin="479,85,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="AxisFeedBw" Content="Feed Bw" HorizontalAlignment="Left" Margin="579,85,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="AxisError" Content="Error" HorizontalAlignment="Left" Margin="379,110,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="AxisError" Content="Error" HorizontalAlignment="Left" Margin="479,110,0,0" VerticalAlignment="Top"/>
         <Slider x:Name="AxisOverride" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Maximum="100" SmallChange="1" LargeChange="10" Interval="25" Width="71"/>
         <TextBox x:Name="AxisOverrideDisplay" HorizontalAlignment="Left" Height="25" Margin="10,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73" IsEnabled="False"/>
         <TextBox x:Name="AxisActualPosition" HorizontalAlignment="Left" Height="25" Margin="10,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
@@ -35,7 +34,7 @@
         <CheckBox x:Name="EnableControl" Content="Enable Control" HorizontalAlignment="Left" Margin="88,38,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="EnableFw" Content="Enable Fw" HorizontalAlignment="Left" Margin="88,56,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="EnableBw" Content="Enable Bw" HorizontalAlignment="Left" Margin="88,74,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="AxisErrorID" HorizontalAlignment="Left" Height="25" Margin="423,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73" IsEnabled="False"/>
+        <TextBox x:Name="AxisErrorID" HorizontalAlignment="Left" Height="25" Margin="579,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73" IsReadOnly="True" IsUndoEnabled="False" Foreground="Red"/>
         <Label Content="Actual Position" HorizontalAlignment="Left" Margin="10,217,0,0" VerticalAlignment="Top"/>
         <Label Content="Set Position" HorizontalAlignment="Left" Margin="160,217,0,0" VerticalAlignment="Top"/>
         <Label Content="Actual Velocity" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top"/>

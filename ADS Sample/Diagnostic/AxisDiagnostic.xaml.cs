@@ -54,7 +54,6 @@ namespace ADS_Sample
                 _internAxisRef.isDisabled = value.isDisabled;
                 AxisReady.IsChecked = !_internAxisRef.isDisabled;
 
-
                 _internAxisRef.isInRange = value.isInRange;
                 AxisInRange.IsChecked = _internAxisRef.isInRange;
 

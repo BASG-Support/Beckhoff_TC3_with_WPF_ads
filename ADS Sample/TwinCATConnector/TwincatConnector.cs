@@ -505,6 +505,8 @@ namespace ADS_Sample
                 _buffer.setPosition = _DataReader.ReadDouble();
                 _buffer.setVelocity = _DataReader.ReadDouble();
                 _buffer.controlleroverride = _DataReader.ReadDouble();
+                _buffer.ErrorID = _DataReader.ReadUInt32();
+                _buffer.hasError = _DataReader.ReadBoolean();
                 _buffer.isDisabled = _DataReader.ReadBoolean();
                 _buffer.isFwDisabled = _DataReader.ReadBoolean();
                 _buffer.isBwDisabled = _DataReader.ReadBoolean();

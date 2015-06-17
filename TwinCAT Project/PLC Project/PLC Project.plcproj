@@ -29,6 +29,12 @@
     <Compile Include="DUTs\ServoMotion_FunctionResult.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GVLs\IO_DigiIn_GVL.TcGVL">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GVLs\IO_DigiOut_GVL.TcGVL">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GVLs\ServoMotion_GVL.TcGVL">
       <SubType>Code</SubType>
     </Compile>
