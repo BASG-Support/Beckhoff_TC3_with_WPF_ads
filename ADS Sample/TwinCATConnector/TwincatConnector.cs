@@ -68,6 +68,7 @@ namespace ADS_Sample
 	    public double TARGET_DECELERATION { get; set; }
 	    public double TARGET_JERK { get; set; }
 	    public double CONTROLLER_OVERRIDE { get; set; }
+        public bool SERVO_HALT { get; set; }
 	    public bool SERVO_ON { get; set; }
 	    public bool SERVO_ON_FW { get; set; }
 	    public bool SERVO_ON_BW { get; set; }
@@ -125,6 +126,7 @@ namespace ADS_Sample
             public double TARGET_DECELERATION { get; set; }
             public double TARGET_JERK { get; set; }
             public double CONTROLLER_OVERRIDE { get; set; }
+            public bool SERVO_HALT { get; set; }
             public bool SERVO_ON { get; set; }
             public bool SERVO_ON_FW { get; set; }
             public bool SERVO_ON_BW { get; set; }
@@ -582,6 +584,7 @@ namespace ADS_Sample
             tcAxCommand[index].SERVO_JOG_MODE = COMMAND.SERVO_JOG_MODE;
             tcAxCommand[index].SERVO_MOVE_ABS = COMMAND.SERVO_MOVE_ABS;
             tcAxCommand[index].SERVO_MOVE_REL = COMMAND.SERVO_MOVE_REL;
+            tcAxCommand[index].SERVO_HALT = COMMAND.SERVO_HALT;
             tcAxCommand[index].SERVO_OFF = COMMAND.SERVO_OFF;
             tcAxCommand[index].SERVO_ON = COMMAND.SERVO_ON;
             tcAxCommand[index].SERVO_ON_BW = COMMAND.SERVO_ON_BW;
@@ -608,6 +611,7 @@ namespace ADS_Sample
             _dataWriter.Write(tcAxCommand[index].SERVO_OFF);
             _dataWriter.Write(tcAxCommand[index].SERVO_MOVE_ABS);
             _dataWriter.Write(tcAxCommand[index].SERVO_MOVE_REL);
+            _dataWriter.Write(tcAxCommand[index].SERVO_HALT);
             _dataWriter.Write(tcAxCommand[index].SERVO_HOME);
             _dataWriter.Write(tcAxCommand[index].SERVO_RESET);
             _dataWriter.Write(tcAxCommand[index].SERVO_JOG_MODE);

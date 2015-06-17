@@ -132,6 +132,7 @@ namespace ADS_Sample
             _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_ABS = false;
             _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_REL = false;
             _AxisDiagnosticEvent.COMMAND.SERVO_RESET = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_HALT = false;
             #endregion
 
             if (ControlSetClicked != null) ControlSetClicked(this, _AxisDiagnosticEvent);
@@ -171,6 +172,7 @@ namespace ADS_Sample
             _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_ABS = false;
             _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_REL = false;
             _AxisDiagnosticEvent.COMMAND.SERVO_RESET = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_HALT = false;
             #endregion
 
             if (JogFwFastClicked != null) JogFwFastClicked(this, _AxisDiagnosticEvent);
@@ -207,6 +209,7 @@ namespace ADS_Sample
             _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_ABS = false;
             _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_REL = false;
             _AxisDiagnosticEvent.COMMAND.SERVO_RESET = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_HALT = false;
             #endregion
 
             if (JogFwFastClicked != null) JogFwFastClicked(this, _AxisDiagnosticEvent);
@@ -245,6 +248,7 @@ namespace ADS_Sample
             _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_ABS = false;
             _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_REL = false;
             _AxisDiagnosticEvent.COMMAND.SERVO_RESET = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_HALT = false;
             #endregion
 
             if (JogBwFastClicked != null) JogBwFastClicked(this, _AxisDiagnosticEvent);
@@ -281,6 +285,7 @@ namespace ADS_Sample
             _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_ABS = false;
             _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_REL = false;
             _AxisDiagnosticEvent.COMMAND.SERVO_RESET = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_HALT = false;
             #endregion
 
             if (JogBwFastClicked != null) JogBwFastClicked(this, _AxisDiagnosticEvent);
@@ -319,6 +324,7 @@ namespace ADS_Sample
             _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_ABS = false;
             _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_REL = false;
             _AxisDiagnosticEvent.COMMAND.SERVO_RESET = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_HALT = false;
             #endregion
 
             if (JogFwSlowClicked != null) JogFwSlowClicked(this, _AxisDiagnosticEvent);
@@ -355,6 +361,7 @@ namespace ADS_Sample
             _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_ABS = false;
             _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_REL = false;
             _AxisDiagnosticEvent.COMMAND.SERVO_RESET = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_HALT = false;
             #endregion
 
             if (JogFwSlowClicked != null) JogFwSlowClicked(this, _AxisDiagnosticEvent);
@@ -393,6 +400,7 @@ namespace ADS_Sample
             _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_ABS = false;
             _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_REL = false;
             _AxisDiagnosticEvent.COMMAND.SERVO_RESET = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_HALT = false;
             #endregion
 
             if (JogBwSlowClicked != null) JogBwSlowClicked(this, _AxisDiagnosticEvent);
@@ -429,6 +437,7 @@ namespace ADS_Sample
             _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_ABS = false;
             _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_REL = false;
             _AxisDiagnosticEvent.COMMAND.SERVO_RESET = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_HALT = false;
             #endregion
 
             if (JogBwSlowClicked != null) JogBwSlowClicked(this, _AxisDiagnosticEvent);
@@ -468,6 +477,7 @@ namespace ADS_Sample
             _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_ABS = false;
             _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_REL = false;
             _AxisDiagnosticEvent.COMMAND.SERVO_RESET = true;
+            _AxisDiagnosticEvent.COMMAND.SERVO_HALT = false;
             #endregion
 
             if (ResetClicked != null) ResetClicked(this, _AxisDiagnosticEvent);
@@ -507,6 +517,7 @@ namespace ADS_Sample
             _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_ABS = true;
             _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_REL = false;
             _AxisDiagnosticEvent.COMMAND.SERVO_RESET = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_HALT = false;
             #endregion
 
             if (MoveAbsClicked != null) MoveAbsClicked(this, _AxisDiagnosticEvent);
@@ -545,6 +556,7 @@ namespace ADS_Sample
             _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_ABS = false;
             _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_REL = true;
             _AxisDiagnosticEvent.COMMAND.SERVO_RESET = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_HALT = false;
             #endregion
 
             if (MoveRelClicked != null) MoveRelClicked(this, _AxisDiagnosticEvent);

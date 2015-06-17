@@ -32,7 +32,9 @@ END_VAR
 		ELSE
 			IF NOT HmiToPlc[i].SERVO_JOG_MODE THEN 
 				Servo_Jog_Stop(i);
-				IF HmiToPlc[i].SERVO_MOVE_ABS THEN
+				IF HmiToPlc[i].SERVO_HALT THEN
+					ACT_Halt();
+				ELSIF HmiToPlc[i].SERVO_MOVE_ABS THEN
 					ACT_MoveToPosition();
 				END_IF
 				IF HmiToPlc[i].SERVO_MOVE_REL THEN
@@ -132,6 +134,22 @@ ELSE
 END_IF]]></ST>
       </Implementation>
     </Method>
+    <Action Name="ACT_Halt" Id="{39e232ab-6ebc-4ec0-af7e-c3ba534cc123}" FolderPath="HMI Actions\">
+      <Implementation>
+        <ST><![CDATA[CASE Servo_Halt(i) OF 
+ServoMotion_FunctionResult.MOTION_UNKNOWN_AXIS:
+	HmiToPlc[i].SERVO_HALT := FALSE;
+ServoMotion_FunctionResult.MOTION_ERROR:
+	HmiToPlc[i].SERVO_HALT := FALSE;
+ServoMotion_FunctionResult.MOTION_OK:
+	HmiToPlc[i].SERVO_HALT := FALSE;
+ServoMotion_FunctionResult.MOTION_COMMAND_ABORTED:
+	HmiToPlc[i].SERVO_HALT := FALSE;
+ServoMotion_FunctionResult.MOTION_BUSY:
+	;
+END_CASE]]></ST>
+      </Implementation>
+    </Action>
     <Action Name="ACT_MoveToPosition" Id="{40847845-e28a-467f-8c2b-007d9c73cf9b}" FolderPath="HMI Actions\">
       <Implementation>
         <ST><![CDATA[CASE Servo_MoveToPosition(i,HmiToPlc[i].TARGET_POSITION,HmiToPlc[i].TARGET_VELOCITY,HmiToPlc[i].TARGET_ACCELERATION,HmiToPlc[i].TARGET_DECELERATION,HmiToPlc[i].TARGET_JERK) OF
@@ -304,9 +322,10 @@ END_VAR
     </Property>
     <Action Name="ACT_Reset" Id="{a7a36296-4bd3-4c04-bfcc-ad271ca28fe6}" FolderPath="HMI Actions\">
       <Implementation>
-        <ST><![CDATA[IF Servo_Reset(i) = ServoMotion_FunctionResult.MOTION_OK THEN
+        <ST><![CDATA[CASE Servo_Reset(i) OF
+ServoMotion_FunctionResult.MOTION_OK:
 	HmiToPlc[i].SERVO_RESET := FALSE;
-END_IF]]></ST>
+END_CASE]]></ST>
       </Implementation>
     </Action>
     <Method Name="Servo_MoveByDistance" Id="{b7b49934-4930-4ea2-b772-a6e74f151dd6}">
