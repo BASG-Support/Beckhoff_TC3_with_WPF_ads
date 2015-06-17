@@ -91,13 +91,14 @@ namespace ADS_Sample
             InitializeComponent();
         }
 
-
+        #region Event handler
         public class AxisDiagnosticClickEventArgs : EventArgs
         {
             public Axis_HmiToPlc COMMAND { get; set; }
             public int ID { get; set; }
         }
-
+        #endregion
+        #region Controller
         public event EventHandler<AxisDiagnosticClickEventArgs> ControlSetClicked;
         private void ControlSet_Click(object sender, RoutedEventArgs e)
         {
@@ -135,7 +136,7 @@ namespace ADS_Sample
 
             if (ControlSetClicked != null) ControlSetClicked(this, _AxisDiagnosticEvent);
         }
-
+        #endregion
         #region Jog modes
         public event EventHandler<AxisDiagnosticClickEventArgs> JogFwFastClicked;
         private void JogFwFast_MouseDown(object sender, MouseButtonEventArgs e)
@@ -433,7 +434,7 @@ namespace ADS_Sample
             if (JogBwSlowClicked != null) JogBwSlowClicked(this, _AxisDiagnosticEvent);
         }
         #endregion
-
+        #region Reset button
         public event EventHandler<AxisDiagnosticClickEventArgs> ResetClicked;
         private void AxisReset_Click(object sender, RoutedEventArgs e)
         {
@@ -471,5 +472,83 @@ namespace ADS_Sample
 
             if (ResetClicked != null) ResetClicked(this, _AxisDiagnosticEvent);
         }
+        #endregion
+        #region Move Buttons
+        public event EventHandler<AxisDiagnosticClickEventArgs> MoveAbsClicked;
+        private void Move_Abs_Click(object sender, RoutedEventArgs e)
+        {
+            AxisDiagnosticClickEventArgs _AxisDiagnosticEvent = new AxisDiagnosticClickEventArgs();
+            _AxisDiagnosticEvent.COMMAND = new Axis_HmiToPlc();
+            _AxisDiagnosticEvent.ID = this.ID;
+
+            #region Servo Enable/Disable
+            _AxisDiagnosticEvent.COMMAND.SERVO_OFF = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_ON = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_ON_BW = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_ON_FW = false;
+            _AxisDiagnosticEvent.COMMAND.CONTROLLER_OVERRIDE = 0;
+            #endregion
+            #region Servo motion dynamics
+            _AxisDiagnosticEvent.COMMAND.TARGET_ACCELERATION = double.Parse(TargetAcceleration.Text);
+            _AxisDiagnosticEvent.COMMAND.TARGET_DECELERATION = double.Parse(TargetDeceleration.Text);
+            _AxisDiagnosticEvent.COMMAND.TARGET_JERK = double.Parse(TargetJerk.Text);
+            _AxisDiagnosticEvent.COMMAND.TARGET_POSITION = double.Parse(TargetPosition.Text);
+            _AxisDiagnosticEvent.COMMAND.TARGET_VELOCITY = double.Parse(TargetVelocity.Text);
+            #endregion
+            #region Jog mode
+            _AxisDiagnosticEvent.COMMAND.SERVO_JOG_MODE = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_JOG_BW_FAST = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_JOG_BW_SLOW = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_JOG_FW_FAST = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_JOG_FW_SLOW = false;
+            #endregion
+            #region Servo movement commands
+            _AxisDiagnosticEvent.COMMAND.SERVO_HOME = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_ABS = true;
+            _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_REL = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_RESET = false;
+            #endregion
+
+            if (MoveAbsClicked != null) MoveAbsClicked(this, _AxisDiagnosticEvent);
+        }
+
+        public event EventHandler<AxisDiagnosticClickEventArgs> MoveRelClicked;
+        private void Move_Rel_Click(object sender, RoutedEventArgs e)
+        {
+            AxisDiagnosticClickEventArgs _AxisDiagnosticEvent = new AxisDiagnosticClickEventArgs();
+            _AxisDiagnosticEvent.COMMAND = new Axis_HmiToPlc();
+            _AxisDiagnosticEvent.ID = this.ID;
+
+            #region Servo Enable/Disable
+            _AxisDiagnosticEvent.COMMAND.SERVO_OFF = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_ON = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_ON_BW = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_ON_FW = false;
+            _AxisDiagnosticEvent.COMMAND.CONTROLLER_OVERRIDE = 0;
+            #endregion
+            #region Servo motion dynamics
+            _AxisDiagnosticEvent.COMMAND.TARGET_ACCELERATION = double.Parse(TargetAcceleration.Text);
+            _AxisDiagnosticEvent.COMMAND.TARGET_DECELERATION = double.Parse(TargetDeceleration.Text);
+            _AxisDiagnosticEvent.COMMAND.TARGET_JERK = double.Parse(TargetJerk.Text);
+            _AxisDiagnosticEvent.COMMAND.TARGET_POSITION = double.Parse(TargetPosition.Text);
+            _AxisDiagnosticEvent.COMMAND.TARGET_VELOCITY = double.Parse(TargetVelocity.Text);
+            #endregion
+            #region Jog mode
+            _AxisDiagnosticEvent.COMMAND.SERVO_JOG_MODE = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_JOG_BW_FAST = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_JOG_BW_SLOW = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_JOG_FW_FAST = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_JOG_FW_SLOW = false;
+            #endregion
+            #region Servo movement commands
+            _AxisDiagnosticEvent.COMMAND.SERVO_HOME = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_ABS = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_REL = true;
+            _AxisDiagnosticEvent.COMMAND.SERVO_RESET = false;
+            #endregion
+
+            if (MoveRelClicked != null) MoveRelClicked(this, _AxisDiagnosticEvent);
+        }
+        #endregion
     }
 }

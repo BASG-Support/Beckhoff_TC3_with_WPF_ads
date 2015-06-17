@@ -27,10 +27,10 @@
         <CheckBox x:Name="AxisError" Content="Error" HorizontalAlignment="Left" Margin="479,110,0,0" VerticalAlignment="Top"/>
         <Slider x:Name="AxisOverride" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Maximum="100" SmallChange="1" LargeChange="10" Interval="25" Width="71"/>
         <TextBox x:Name="AxisOverrideDisplay" HorizontalAlignment="Left" Height="25" Margin="10,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73" IsEnabled="False"/>
-        <TextBox x:Name="AxisActualPosition" HorizontalAlignment="Left" Height="25" Margin="10,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-        <TextBox x:Name="AxisSetPosition" HorizontalAlignment="Left" Height="25" Margin="160,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-        <TextBox x:Name="AxisActualVelocity" HorizontalAlignment="Left" Height="25" Margin="10,293,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-        <TextBox x:Name="AxisSetVelocity" HorizontalAlignment="Left" Height="25" Margin="160,293,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="AxisActualPosition" HorizontalAlignment="Left" Height="25" Margin="10,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True" IsUndoEnabled="False"/>
+        <TextBox x:Name="AxisSetPosition" HorizontalAlignment="Left" Height="25" Margin="160,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True" IsUndoEnabled="False"/>
+        <TextBox x:Name="AxisActualVelocity" HorizontalAlignment="Left" Height="25" Margin="10,293,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True" IsUndoEnabled="False"/>
+        <TextBox x:Name="AxisSetVelocity" HorizontalAlignment="Left" Height="25" Margin="160,293,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True" IsUndoEnabled="False"/>
         <CheckBox x:Name="EnableControl" Content="Enable Control" HorizontalAlignment="Left" Margin="88,38,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="EnableFw" Content="Enable Fw" HorizontalAlignment="Left" Margin="88,56,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="EnableBw" Content="Enable Bw" HorizontalAlignment="Left" Margin="88,74,0,0" VerticalAlignment="Top"/>
@@ -39,5 +39,17 @@
         <Label Content="Set Position" HorizontalAlignment="Left" Margin="160,217,0,0" VerticalAlignment="Top"/>
         <Label Content="Actual Velocity" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top"/>
         <Label Content="Set Velocity" HorizontalAlignment="Left" Margin="160,270,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Move_Abs" Content="Move To" HorizontalAlignment="Left" Height="24" Margin="379,293,0,0" VerticalAlignment="Top" Width="125" Click="Move_Abs_Click"/>
+        <Button x:Name="Move_Rel" Content="Move By" HorizontalAlignment="Left" Height="24" Margin="509,293,0,0" VerticalAlignment="Top" Width="125" Click="Move_Rel_Click"/>
+        <TextBox x:Name="TargetPosition" HorizontalAlignment="Left" Height="20" Margin="513,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsUndoEnabled="False" RenderTransformOrigin="0.733,2.45"/>
+        <TextBox x:Name="TargetVelocity" HorizontalAlignment="Left" Height="20" Margin="513,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsUndoEnabled="False"/>
+        <TextBox x:Name="TargetAcceleration" HorizontalAlignment="Left" Height="20" Margin="513,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsUndoEnabled="False"/>
+        <TextBox x:Name="TargetDeceleration" HorizontalAlignment="Left" Height="20" Margin="513,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsUndoEnabled="False"/>
+        <TextBox x:Name="TargetJerk" HorizontalAlignment="Left" Height="20" Margin="513,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsUndoEnabled="False"/>
+        <Label Content="Target Position/Distance" Margin="379,168,192,202" Height="30"/>
+        <Label Content="Target Velocity" Margin="379,193,221,177" Height="30"/>
+        <Label Content="Target Acceleration" Margin="379,218,196,152" Height="30"/>
+        <Label Content="Target Deceleration" Margin="379,243,196,127" Height="30"/>
+        <Label Content="Target Jerk" Margin="379,268,221,102" Height="30"/>
     </Grid>
 </UserControl>

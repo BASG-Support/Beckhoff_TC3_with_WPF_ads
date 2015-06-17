@@ -78,6 +78,8 @@ namespace ADS_Sample
                 AxisDiagObj.JogFwFastClicked += AxisDiagObj_JogFwFastClicked;
                 AxisDiagObj.JogFwSlowClicked += AxisDiagObj_JogFwSlowClicked;
                 AxisDiagObj.ResetClicked += AxisDiagObj_ResetClicked;
+                AxisDiagObj.MoveAbsClicked += AxisDiagObj_MoveAbsClicked;
+                AxisDiagObj.MoveRelClicked += AxisDiagObj_MoveRelClicked;
                 AxisTab.Content = AxisDiagObj;
                 MainContent.Items.Add(AxisTab);
             }
@@ -144,6 +146,14 @@ namespace ADS_Sample
             TwincatConnector.tcSetAxisCommand(e.ID, e.COMMAND);
         }
         private void AxisDiagObj_ResetClicked(object sender, ADS_Sample.AxisDiagnostic.AxisDiagnosticClickEventArgs e)
+        {
+            TwincatConnector.tcSetAxisCommand(e.ID, e.COMMAND);
+        }
+        private void AxisDiagObj_MoveAbsClicked(object sender, ADS_Sample.AxisDiagnostic.AxisDiagnosticClickEventArgs e)
+        {
+            TwincatConnector.tcSetAxisCommand(e.ID, e.COMMAND);
+        }
+        private void AxisDiagObj_MoveRelClicked(object sender, ADS_Sample.AxisDiagnostic.AxisDiagnosticClickEventArgs e)
         {
             TwincatConnector.tcSetAxisCommand(e.ID, e.COMMAND);
         }

@@ -136,15 +136,15 @@ END_IF]]></ST>
       <Implementation>
         <ST><![CDATA[CASE Servo_MoveToPosition(i,HmiToPlc[i].TARGET_POSITION,HmiToPlc[i].TARGET_VELOCITY,HmiToPlc[i].TARGET_ACCELERATION,HmiToPlc[i].TARGET_DECELERATION,HmiToPlc[i].TARGET_JERK) OF
 ServoMotion_FunctionResult.MOTION_UNKNOWN_AXIS:
-	;
+	HmiToPlc[i].SERVO_MOVE_ABS := FALSE;
 ServoMotion_FunctionResult.MOTION_COMMAND_ABORTED: 
-	;
+	HmiToPlc[i].SERVO_MOVE_ABS := FALSE;
 ServoMotion_FunctionResult.MOTION_ERROR:
-	;
+	HmiToPlc[i].SERVO_MOVE_ABS := FALSE;
 ServoMotion_FunctionResult.MOTION_BUSY: 
 	;
 ServoMotion_FunctionResult.MOTION_OK:
-	;
+	HmiToPlc[i].SERVO_MOVE_ABS := FALSE;
 END_CASE]]></ST>
       </Implementation>
     </Action>
@@ -252,15 +252,15 @@ END_IF]]></ST>
       <Implementation>
         <ST><![CDATA[CASE Servo_MoveByDistance(i,HmiToPlc[i].TARGET_POSITION,HmiToPlc[i].TARGET_VELOCITY,HmiToPlc[i].TARGET_ACCELERATION,HmiToPlc[i].TARGET_DECELERATION,HmiToPlc[i].TARGET_JERK) OF
 ServoMotion_FunctionResult.MOTION_UNKNOWN_AXIS:
-	;
+	HmiToPlc[i].SERVO_MOVE_REL := FALSE;
 ServoMotion_FunctionResult.MOTION_COMMAND_ABORTED: 
-	;
+	HmiToPlc[i].SERVO_MOVE_REL := FALSE;
 ServoMotion_FunctionResult.MOTION_ERROR:
-	;
+	HmiToPlc[i].SERVO_MOVE_REL := FALSE;
 ServoMotion_FunctionResult.MOTION_BUSY: 
 	;
 ServoMotion_FunctionResult.MOTION_OK:
-	;
+	HmiToPlc[i].SERVO_MOVE_REL := FALSE;
 END_CASE
 			]]></ST>
       </Implementation>
