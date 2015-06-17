@@ -28,13 +28,17 @@
         <CheckBox x:Name="AxisError" Content="Error" HorizontalAlignment="Left" Margin="379,110,0,0" VerticalAlignment="Top"/>
         <Slider x:Name="AxisOverride" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Maximum="100" SmallChange="1" LargeChange="10" Interval="25" Width="71"/>
         <TextBox x:Name="AxisOverrideDisplay" HorizontalAlignment="Left" Height="25" Margin="10,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73" IsEnabled="False"/>
-        <TextBox x:Name="AxisActualPosition" HorizontalAlignment="Left" Height="25" Margin="10,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-        <TextBox x:Name="AxisSetPosition" HorizontalAlignment="Left" Height="25" Margin="160,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-        <TextBox x:Name="AxisActualVelocity" HorizontalAlignment="Left" Height="25" Margin="10,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-        <TextBox x:Name="AxisSetVelocity" HorizontalAlignment="Left" Height="25" Margin="160,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="AxisActualPosition" HorizontalAlignment="Left" Height="25" Margin="10,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="AxisSetPosition" HorizontalAlignment="Left" Height="25" Margin="160,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="AxisActualVelocity" HorizontalAlignment="Left" Height="25" Margin="10,293,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="AxisSetVelocity" HorizontalAlignment="Left" Height="25" Margin="160,293,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
         <CheckBox x:Name="EnableControl" Content="Enable Control" HorizontalAlignment="Left" Margin="88,38,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="EnableFw" Content="Enable Fw" HorizontalAlignment="Left" Margin="88,56,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="EnableBw" Content="Enable Bw" HorizontalAlignment="Left" Margin="88,74,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="AxisErrorID" HorizontalAlignment="Left" Height="25" Margin="423,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73" IsEnabled="False"/>
+        <Label Content="Actual Position" HorizontalAlignment="Left" Margin="10,217,0,0" VerticalAlignment="Top"/>
+        <Label Content="Set Position" HorizontalAlignment="Left" Margin="160,217,0,0" VerticalAlignment="Top"/>
+        <Label Content="Actual Velocity" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top"/>
+        <Label Content="Set Velocity" HorizontalAlignment="Left" Margin="160,270,0,0" VerticalAlignment="Top"/>
     </Grid>
 </UserControl>

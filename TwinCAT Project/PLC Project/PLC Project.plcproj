@@ -52,14 +52,6 @@
     <Folder Include="POUs" />
   </ItemGroup>
   <ItemGroup>
-    <PlaceholderReference Include="IO_DigiIn_Lib">
-      <DefaultResolution>IO_DigiIn_Lib, * (Chua Siang Poh)</DefaultResolution>
-      <Namespace>IO_DigiIn_Lib</Namespace>
-    </PlaceholderReference>
-    <PlaceholderReference Include="IO_DigiOut_Lib">
-      <DefaultResolution>IO_DigiOut_Lib, * (Chua Siang Poh)</DefaultResolution>
-      <Namespace>IO_DigiOut_Lib</Namespace>
-    </PlaceholderReference>
     <PlaceholderReference Include="Tc2_MC2">
       <DefaultResolution>Tc2_MC2, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_MC2</Namespace>
@@ -80,14 +72,6 @@
       <DefaultResolution>Tc3_Module, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc3_Module</Namespace>
     </PlaceholderReference>
-  </ItemGroup>
-  <ItemGroup>
-    <PlaceholderResolution Include="IO_DigiIn_Lib">
-      <Resolution>IO_DigiIn_Lib, 1.0 (Chua Siang Poh)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="IO_DigiOut_Lib">
-      <Resolution>IO_DigiOut_Lib, 1.0 (Chua Siang Poh)</Resolution>
-    </PlaceholderResolution>
   </ItemGroup>
   <ItemGroup>
     <Content Include="PLC Project.tmc">
