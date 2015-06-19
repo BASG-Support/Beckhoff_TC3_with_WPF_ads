@@ -11,6 +11,6 @@
   <PlcVar Name="IO_DigiIn_GVL.Digital_Input[3]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DI" Index="7"/>
   <PlcVar Name="IO_DigiIn_GVL.Digital_Input[4]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DI" Index="8"/>
   <PlcVar Name="IO_DigiIn_GVL.Digital_Input[5]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DI" Index="9"/>
-  <AxsVar Count="ServoMotion_Parameters.MAX_AXES" PlcToHmi="ServoMotion_GVL.PlcToHmi" P2HSize="56" HmiToPlc="ServoMotion_GVL.HmiToPlc" H2PSize="64"/>
+  <AxsVar Count="Motion_Parameters.MAX_AXES" PlcToHmi="Motion_GVL.PlcToHmi" P2HSize="56" HmiToPlc="Motion_GVL.HmiToPlc" H2PSize="64"/>
 </Plc>
 

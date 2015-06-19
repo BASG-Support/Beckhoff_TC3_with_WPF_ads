@@ -3,7 +3,7 @@
   <POU Name="MAIN" Id="{252640da-6020-4c12-a241-c1e4382f809e}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	basgMotion : Servo;
+	basgMotion : MotionControl;
 	i: INT;
 END_VAR
 ]]></Declaration>

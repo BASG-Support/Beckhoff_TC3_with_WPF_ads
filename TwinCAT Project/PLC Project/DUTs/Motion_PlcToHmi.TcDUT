@@ -19,7 +19,7 @@ STRUCT
 	isPositiveDirection : BOOL;
 	isNegativeDirection : BOOL;            
     isInTarget 			: BOOL;            
-    isInRange 			: BOOL;            
+    isInRange 			: BOOL;              
 END_STRUCT
 END_TYPE
 ]]></Declaration>

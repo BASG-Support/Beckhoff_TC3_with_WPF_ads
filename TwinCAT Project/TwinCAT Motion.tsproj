@@ -1250,7 +1250,7 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Project ProjectGUID="{44272E38-932F-4203-B091-B9FA8A79366C}" Target64Bit="true">
+	<Project ProjectGUID="{0611AE0D-4DEA-49FA-BDB2-87825A3294C0}" Target64Bit="true">
 		<System>
 			<Settings MaxCpus="4">
 				<Cpu/>
@@ -1299,8 +1299,8 @@ External Setpoint Generation:
 						<Velo RefSearch="360" RefSync="360" Maximum="16000"/>
 						<OtherSettings AllowMotionCmdToSlave="true"/>
 					</AxisPara>
-					<Encoder Name="Enc" EncType="1">
-						<EncPara ScaleFactorNumerator="360" ScaleFactorDenominator="1048576"/>
+					<Encoder Name="Enc" EncType="19">
+						<EncPara ScaleFactorNumerator="360" ScaleFactorDenominator="1048576" MaxCount="#xffffffff"/>
 						<Vars VarGrpType="1">
 							<Name>Inputs</Name>
 							<Var>
@@ -1363,8 +1363,8 @@ External Setpoint Generation:
 							</Var>
 						</Vars>
 					</Encoder>
-					<Drive Name="Drive" DrvType="5">
-						<DrvPara>
+					<Drive Name="Drive" DrvType="16">
+						<DrvPara MaxCount="#xffffffff">
 							<Analog VeloReferenz="18000"/>
 							<TimeComp TaskDelayCycles="1"/>
 						</DrvPara>
@@ -1417,26 +1417,6 @@ Drive Status 4 (manually linked):
 								</SubVar>
 								<SubVar TypeFormatIndex="2">
 									<Name>nDataOut2</Name>
-								</SubVar>
-								<SubVar>
-									<Name>nCtrl2</Name>
-									<Comment>
-										<![CDATA[Digital Outputs Setpoint Generator:
-0x41 (0100 0001) = Minus (0x42 for inverse motor polarity)
-0x42 (0100 0010) = Plus (0x41 for inverse motor polarity)
-0x80 (1000 0000) = Stop
-]]>
-									</Comment>
-								</SubVar>
-								<SubVar>
-									<Name>nCtrl3</Name>
-									<Comment>
-										<![CDATA[Digital Outputs (Setpoint Generator + Position Controller):
-0x41 (0100 0001) = Minus (0x42 for inverse motor polarity)
-0x42 (0100 0010) = Plus (0x41 for inverse motor polarity)
-0x80 (1000 0000) = Stop
-]]>
-									</Comment>
 								</SubVar>
 								<SubVar TypeFormatIndex="2">
 									<Name>nDataOut3</Name>
@@ -2862,7 +2842,11 @@ External Setpoint Generation:
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
-							<Name>ServoMotion_GVL.AXIS[1].AXIS.NcToPlc</Name>
+							<Name>IO_DigiIn_GVL.Digital_Input</Name>
+							<Type>ARRAY [1..10] OF BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Motion_GVL.AXIS[1].AXIS.NcToPlc</Name>
 							<Type GUID="{8CDE0C45-AB9D-42DB-BC94-1CF7521AB268}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 							<SubVar>
 								<Name>AxisState</Name>
@@ -2911,11 +2895,11 @@ External Setpoint Generation:
 							</SubVar>
 						</Var>
 						<Var>
-							<Name>ServoMotion_GVL.AXIS[1].HOME_CALIBRATION</Name>
+							<Name>Motion_GVL.AXIS[1].HOME_CALIBRATION</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>ServoMotion_GVL.AXIS[2].AXIS.NcToPlc</Name>
+							<Name>Motion_GVL.AXIS[2].AXIS.NcToPlc</Name>
 							<Type GUID="{8CDE0C45-AB9D-42DB-BC94-1CF7521AB268}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 							<SubVar>
 								<Name>AxisState</Name>
@@ -2964,11 +2948,11 @@ External Setpoint Generation:
 							</SubVar>
 						</Var>
 						<Var>
-							<Name>ServoMotion_GVL.AXIS[2].HOME_CALIBRATION</Name>
+							<Name>Motion_GVL.AXIS[2].HOME_CALIBRATION</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>ServoMotion_GVL.AXIS[3].AXIS.NcToPlc</Name>
+							<Name>Motion_GVL.AXIS[3].AXIS.NcToPlc</Name>
 							<Type GUID="{8CDE0C45-AB9D-42DB-BC94-1CF7521AB268}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 							<SubVar>
 								<Name>AxisState</Name>
@@ -3017,11 +3001,11 @@ External Setpoint Generation:
 							</SubVar>
 						</Var>
 						<Var>
-							<Name>ServoMotion_GVL.AXIS[3].HOME_CALIBRATION</Name>
+							<Name>Motion_GVL.AXIS[3].HOME_CALIBRATION</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>ServoMotion_GVL.AXIS[4].AXIS.NcToPlc</Name>
+							<Name>Motion_GVL.AXIS[4].AXIS.NcToPlc</Name>
 							<Type GUID="{8CDE0C45-AB9D-42DB-BC94-1CF7521AB268}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 							<SubVar>
 								<Name>AxisState</Name>
@@ -3070,11 +3054,11 @@ External Setpoint Generation:
 							</SubVar>
 						</Var>
 						<Var>
-							<Name>ServoMotion_GVL.AXIS[4].HOME_CALIBRATION</Name>
+							<Name>Motion_GVL.AXIS[4].HOME_CALIBRATION</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>ServoMotion_GVL.AXIS[5].AXIS.NcToPlc</Name>
+							<Name>Motion_GVL.AXIS[5].AXIS.NcToPlc</Name>
 							<Type GUID="{8CDE0C45-AB9D-42DB-BC94-1CF7521AB268}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 							<SubVar>
 								<Name>AxisState</Name>
@@ -3123,7 +3107,7 @@ External Setpoint Generation:
 							</SubVar>
 						</Var>
 						<Var>
-							<Name>ServoMotion_GVL.AXIS[5].HOME_CALIBRATION</Name>
+							<Name>Motion_GVL.AXIS[5].HOME_CALIBRATION</Name>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>
@@ -3131,26 +3115,26 @@ External Setpoint Generation:
 						<Name>PlcTask Outputs</Name>
 						<Var>
 							<Name>IO_DigiOut_GVL.Digital_Output</Name>
-							<Type>ARRAY [1..1] OF BOOL</Type>
+							<Type>ARRAY [1..10] OF BOOL</Type>
 						</Var>
 						<Var>
-							<Name>ServoMotion_GVL.AXIS[1].AXIS.PlcToNc</Name>
+							<Name>Motion_GVL.AXIS[1].AXIS.PlcToNc</Name>
 							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 						</Var>
 						<Var>
-							<Name>ServoMotion_GVL.AXIS[2].AXIS.PlcToNc</Name>
+							<Name>Motion_GVL.AXIS[2].AXIS.PlcToNc</Name>
 							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 						</Var>
 						<Var>
-							<Name>ServoMotion_GVL.AXIS[3].AXIS.PlcToNc</Name>
+							<Name>Motion_GVL.AXIS[3].AXIS.PlcToNc</Name>
 							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 						</Var>
 						<Var>
-							<Name>ServoMotion_GVL.AXIS[4].AXIS.PlcToNc</Name>
+							<Name>Motion_GVL.AXIS[4].AXIS.PlcToNc</Name>
 							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 						</Var>
 						<Var>
-							<Name>ServoMotion_GVL.AXIS[5].AXIS.PlcToNc</Name>
+							<Name>Motion_GVL.AXIS[5].AXIS.PlcToNc</Name>
 							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 						</Var>
 					</Vars>
@@ -3193,28 +3177,30 @@ External Setpoint Generation:
 				</Instance>
 			</Project>
 		</Plc>
+		<Io/>
 	</Project>
 	<Mappings>
+		<MappingInfo Identifier="{05000010-0021-0101-1000-040320000101}" Id="#x03070010" Watchdog="14000000040000000400000004000000"/>
 		<OwnerA Name="TIPC^PLC Project^PLC Project Instance">
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^AX1">
-				<Link VarA="PlcTask Inputs^ServoMotion_GVL.AXIS[1].AXIS.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^ServoMotion_GVL.AXIS[1].AXIS.PlcToNc" VarB="Inputs^FromPlc"/>
+				<Link VarA="PlcTask Inputs^Motion_GVL.AXIS[1].AXIS.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^Motion_GVL.AXIS[1].AXIS.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^AX2">
-				<Link VarA="PlcTask Inputs^ServoMotion_GVL.AXIS[2].AXIS.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^ServoMotion_GVL.AXIS[2].AXIS.PlcToNc" VarB="Inputs^FromPlc"/>
+				<Link VarA="PlcTask Inputs^Motion_GVL.AXIS[2].AXIS.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^Motion_GVL.AXIS[2].AXIS.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^AX3">
-				<Link VarA="PlcTask Inputs^ServoMotion_GVL.AXIS[3].AXIS.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^ServoMotion_GVL.AXIS[3].AXIS.PlcToNc" VarB="Inputs^FromPlc"/>
+				<Link VarA="PlcTask Inputs^Motion_GVL.AXIS[3].AXIS.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^Motion_GVL.AXIS[3].AXIS.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^AX4">
-				<Link VarA="PlcTask Inputs^ServoMotion_GVL.AXIS[4].AXIS.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^ServoMotion_GVL.AXIS[4].AXIS.PlcToNc" VarB="Inputs^FromPlc"/>
+				<Link VarA="PlcTask Inputs^Motion_GVL.AXIS[4].AXIS.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^Motion_GVL.AXIS[4].AXIS.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^AX5">
-				<Link VarA="PlcTask Inputs^ServoMotion_GVL.AXIS[5].AXIS.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^ServoMotion_GVL.AXIS[5].AXIS.PlcToNc" VarB="Inputs^FromPlc"/>
+				<Link VarA="PlcTask Inputs^Motion_GVL.AXIS[5].AXIS.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^Motion_GVL.AXIS[5].AXIS.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

@@ -72,19 +72,13 @@ namespace ADS_Sample
                 AxisDiagnostic AxisDiagObj = new AxisDiagnostic();
                 AxisDiagObj.ID = i;
                 AxisDiagObj.AxisName = "Axis " + (i + 1).ToString();
-                AxisDiagObj.ControlSetClicked += AxDiagSetControl_Clicked;
-                AxisDiagObj.JogBwFastClicked += AxisDiagObj_JogBwFastClicked;
-                AxisDiagObj.JogBwSlowClicked += AxisDiagObj_JogBwSlowClicked;
-                AxisDiagObj.JogFwFastClicked += AxisDiagObj_JogFwFastClicked;
-                AxisDiagObj.JogFwSlowClicked += AxisDiagObj_JogFwSlowClicked;
-                AxisDiagObj.ResetClicked += AxisDiagObj_ResetClicked;
-                AxisDiagObj.MoveAbsClicked += AxisDiagObj_MoveAbsClicked;
-                AxisDiagObj.MoveRelClicked += AxisDiagObj_MoveRelClicked;
+                AxisDiagObj.NewCommand += AxisDiagObj_NewCommand;
                 AxisTab.Content = AxisDiagObj;
                 MainContent.Items.Add(AxisTab);
             }
             #endregion
 
+            #region START Timer
             if (TwincatConnector.IsConnected)
             {
                 dispatcherTimer.Tick += dispatcherTimer_Tick;
@@ -92,6 +86,7 @@ namespace ADS_Sample
                 dispatcherTimer.Start();
             }
             else TwincatConnector.LogMessage("Not connected to device. Polling not started.");
+            #endregion
         }
 
         private void Page_Unloaded(object sender, RoutedEventArgs e)
@@ -125,35 +120,7 @@ namespace ADS_Sample
         #endregion
 
         #region Axis Diagnostic Events
-        private void AxDiagSetControl_Clicked(object sender, ADS_Sample.AxisDiagnostic.AxisDiagnosticClickEventArgs e)
-        {
-            TwincatConnector.tcSetAxisCommand(e.ID, e.COMMAND);
-        }
-        private void AxisDiagObj_JogBwFastClicked(object sender, ADS_Sample.AxisDiagnostic.AxisDiagnosticClickEventArgs e)
-        {
-            TwincatConnector.tcSetAxisCommand(e.ID, e.COMMAND);
-        }
-        private void AxisDiagObj_JogFwFastClicked(object sender, ADS_Sample.AxisDiagnostic.AxisDiagnosticClickEventArgs e)
-        {
-            TwincatConnector.tcSetAxisCommand(e.ID, e.COMMAND);
-        }
-        private void AxisDiagObj_JogBwSlowClicked(object sender, ADS_Sample.AxisDiagnostic.AxisDiagnosticClickEventArgs e)
-        {
-            TwincatConnector.tcSetAxisCommand(e.ID, e.COMMAND);
-        }
-        private void AxisDiagObj_JogFwSlowClicked(object sender, ADS_Sample.AxisDiagnostic.AxisDiagnosticClickEventArgs e)
-        {
-            TwincatConnector.tcSetAxisCommand(e.ID, e.COMMAND);
-        }
-        private void AxisDiagObj_ResetClicked(object sender, ADS_Sample.AxisDiagnostic.AxisDiagnosticClickEventArgs e)
-        {
-            TwincatConnector.tcSetAxisCommand(e.ID, e.COMMAND);
-        }
-        private void AxisDiagObj_MoveAbsClicked(object sender, ADS_Sample.AxisDiagnostic.AxisDiagnosticClickEventArgs e)
-        {
-            TwincatConnector.tcSetAxisCommand(e.ID, e.COMMAND);
-        }
-        private void AxisDiagObj_MoveRelClicked(object sender, ADS_Sample.AxisDiagnostic.AxisDiagnosticClickEventArgs e)
+        private void AxisDiagObj_NewCommand(object sender, ADS_Sample.AxisDiagnostic.AxisDiagnosticClickEventArgs e)
         {
             TwincatConnector.tcSetAxisCommand(e.ID, e.COMMAND);
         }

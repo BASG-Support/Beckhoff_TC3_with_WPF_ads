@@ -93,53 +93,53 @@ namespace ADS_Sample
     }
     #endregion
 
-    class TwincatConnector
+    partial class TwincatConnector
     {
         #region Special Definitions
-        public class _Axis_PlcToHmi
+        private class _Axis_PlcToHmi
         {
             public int handle = 0;
             public short size = 0;
-            public bool isDisabled = false;
-            public bool isFwDisabled = false;
-            public bool isBwDisabled = false;
-            public bool isCalibrated = false;
-            public bool hasJob = false;
-            public bool isNotMoving = false;
-            public bool isPositiveDirection = false;
-            public bool isNegativeDirection = false;
-            public bool isInTarget = false;
-            public bool isInRange = false;
-            public bool hasError = false;
-            public uint ErrorId = 0;
-            public double controlleroverride = 0;
-            public double actualPosition = 0, actualVelocity = 0;
-            public double setPosition = 0, setVelocity = 0;
+            //public bool isDisabled = false;
+            //public bool isFwDisabled = false;
+            //public bool isBwDisabled = false;
+            //public bool isCalibrated = false;
+            //public bool hasJob = false;
+            //public bool isNotMoving = false;
+            //public bool isPositiveDirection = false;
+            //public bool isNegativeDirection = false;
+            //public bool isInTarget = false;
+            //public bool isInRange = false;
+            //public bool hasError = false;
+            //public uint ErrorId = 0;
+            //public double controlleroverride = 0;
+            //public double actualPosition = 0, actualVelocity = 0;
+            //public double setPosition = 0, setVelocity = 0;
         }
-        public class _Axis_HmiToPlc
+        private class _Axis_HmiToPlc
         {
-            public int handle = 0;
-            public short size = 0;
-            public double TARGET_POSITION { get; set; }
-            public double TARGET_VELOCITY { get; set; }
-            public double TARGET_ACCELERATION { get; set; }
-            public double TARGET_DECELERATION { get; set; }
-            public double TARGET_JERK { get; set; }
-            public double CONTROLLER_OVERRIDE { get; set; }
-            public bool SERVO_HALT { get; set; }
-            public bool SERVO_ON { get; set; }
-            public bool SERVO_ON_FW { get; set; }
-            public bool SERVO_ON_BW { get; set; }
-            public bool SERVO_OFF { get; set; }
-            public bool SERVO_MOVE_ABS { get; set; }
-            public bool SERVO_MOVE_REL { get; set; }
-            public bool SERVO_HOME { get; set; }
-            public bool SERVO_RESET { get; set; }
-            public bool SERVO_JOG_MODE { get; set; }
-            public bool SERVO_JOG_FW_FAST { get; set; }
-            public bool SERVO_JOG_BW_FAST { get; set; }
-            public bool SERVO_JOG_FW_SLOW { get; set; }
-            public bool SERVO_JOG_BW_SLOW { get; set; }
+            public int handle { get; set; }
+            public short size { get; set; }
+            //public double TARGET_POSITION { get; set; }
+            //public double TARGET_VELOCITY { get; set; }
+            //public double TARGET_ACCELERATION { get; set; }
+            //public double TARGET_DECELERATION { get; set; }
+            //public double TARGET_JERK { get; set; }
+            //public double CONTROLLER_OVERRIDE { get; set; }
+            //public bool SERVO_HALT { get; set; }
+            //public bool SERVO_ON { get; set; }
+            //public bool SERVO_ON_FW { get; set; }
+            //public bool SERVO_ON_BW { get; set; }
+            //public bool SERVO_OFF { get; set; }
+            //public bool SERVO_MOVE_ABS { get; set; }
+            //public bool SERVO_MOVE_REL { get; set; }
+            //public bool SERVO_HOME { get; set; }
+            //public bool SERVO_RESET { get; set; }
+            //public bool SERVO_JOG_MODE { get; set; }
+            //public bool SERVO_JOG_FW_FAST { get; set; }
+            //public bool SERVO_JOG_BW_FAST { get; set; }
+            //public bool SERVO_JOG_FW_SLOW { get; set; }
+            //public bool SERVO_JOG_BW_SLOW { get; set; }
         }
         #endregion
 
@@ -453,43 +453,43 @@ namespace ADS_Sample
         #endregion
 
         #region TwinCAT Axis & HMI
-        static public tcFunctionResult tcUpdateAxStatus()
-        {
-            if (!tcClient.IsConnected) return tcFunctionResult.TC_NOT_CONNECTED;
-            if (Axis_MaxAxes <= 0) return tcFunctionResult.TC_NO_AXIS;
-            for (int k = 0; k < Axis_MaxAxes; k++)
-            {
-                AdsStream _DataStream = new AdsStream(tcAxFeedback[k].size);
-                AdsBinaryReader _DataReader = new AdsBinaryReader(_DataStream);
-                try
-                {
-                    tcClient.Read(tcAxFeedback[k].handle, _DataStream);
-                    tcAxFeedback[k].actualPosition = _DataReader.ReadDouble();
-                    tcAxFeedback[k].actualVelocity = _DataReader.ReadDouble();
-                    tcAxFeedback[k].setPosition = _DataReader.ReadDouble();
-                    tcAxFeedback[k].setVelocity = _DataReader.ReadDouble();
-                    tcAxFeedback[k].controlleroverride = _DataReader.ReadDouble();
-                    tcAxFeedback[k].isDisabled = _DataReader.ReadBoolean();
-                    tcAxFeedback[k].isFwDisabled = _DataReader.ReadBoolean();
-                    tcAxFeedback[k].isBwDisabled = _DataReader.ReadBoolean();
-                    tcAxFeedback[k].isCalibrated = _DataReader.ReadBoolean();
-                    tcAxFeedback[k].hasJob = _DataReader.ReadBoolean();
-                    tcAxFeedback[k].isNotMoving = _DataReader.ReadBoolean();
-                    tcAxFeedback[k].isPositiveDirection = _DataReader.ReadBoolean();
-                    tcAxFeedback[k].isNegativeDirection = _DataReader.ReadBoolean();
-                    tcAxFeedback[k].isInTarget = _DataReader.ReadBoolean();
-                    tcAxFeedback[k].isInRange = _DataReader.ReadBoolean();
-                }
-                catch (Exception ex)
-                {
-                    LogMessage(string.Format("{0}\t: {1}", "Error", "Failed to read PlcToHmi" + ex.Message));
-                    _DataReader.Close();
-                    return tcFunctionResult.TC_FAIL_TO_READ_AXIS_FEEDBACK;
-                }
-                _DataReader.Close();
-            }
-            return tcFunctionResult.TC_SUCCESS;
-        }
+        //static public tcFunctionResult tcUpdateAxStatus()
+        //{
+        //    if (!tcClient.IsConnected) return tcFunctionResult.TC_NOT_CONNECTED;
+        //    if (Axis_MaxAxes <= 0) return tcFunctionResult.TC_NO_AXIS;
+        //    for (int k = 0; k < Axis_MaxAxes; k++)
+        //    {
+        //        AdsStream _DataStream = new AdsStream(tcAxFeedback[k].size);
+        //        AdsBinaryReader _DataReader = new AdsBinaryReader(_DataStream);
+        //        try
+        //        {
+        //            tcClient.Read(tcAxFeedback[k].handle, _DataStream);
+        //            tcAxFeedback[k].actualPosition = _DataReader.ReadDouble();
+        //            tcAxFeedback[k].actualVelocity = _DataReader.ReadDouble();
+        //            tcAxFeedback[k].setPosition = _DataReader.ReadDouble();
+        //            tcAxFeedback[k].setVelocity = _DataReader.ReadDouble();
+        //            tcAxFeedback[k].controlleroverride = _DataReader.ReadDouble();
+        //            tcAxFeedback[k].isDisabled = _DataReader.ReadBoolean();
+        //            tcAxFeedback[k].isFwDisabled = _DataReader.ReadBoolean();
+        //            tcAxFeedback[k].isBwDisabled = _DataReader.ReadBoolean();
+        //            tcAxFeedback[k].isCalibrated = _DataReader.ReadBoolean();
+        //            tcAxFeedback[k].hasJob = _DataReader.ReadBoolean();
+        //            tcAxFeedback[k].isNotMoving = _DataReader.ReadBoolean();
+        //            tcAxFeedback[k].isPositiveDirection = _DataReader.ReadBoolean();
+        //            tcAxFeedback[k].isNegativeDirection = _DataReader.ReadBoolean();
+        //            tcAxFeedback[k].isInTarget = _DataReader.ReadBoolean();
+        //            tcAxFeedback[k].isInRange = _DataReader.ReadBoolean();
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            LogMessage(string.Format("{0}\t: {1}", "Error", "Failed to read PlcToHmi" + ex.Message));
+        //            _DataReader.Close();
+        //            return tcFunctionResult.TC_FAIL_TO_READ_AXIS_FEEDBACK;
+        //        }
+        //        _DataReader.Close();
+        //    }
+        //    return tcFunctionResult.TC_SUCCESS;
+        //}
         static public Axis_PlcToHmi tcGetAxsPlcToHmi(int index)
         {
             if (!tcClient.IsConnected) return null;
@@ -528,7 +528,7 @@ namespace ADS_Sample
                 return null;
             }
         }
-        static public tcFunctionResult tcGetAxisFeedback(int index, ref Axis_PlcToHmi RESULT)
+        static public tcFunctionResult tcTryGetAxisFeedback(int index, ref Axis_PlcToHmi RESULT)
         {
             if (!tcClient.IsConnected) return tcFunctionResult.TC_NOT_CONNECTED;
             if (Axis_MaxAxes <= 0) return tcFunctionResult.TC_NO_AXIS;
@@ -574,51 +574,30 @@ namespace ADS_Sample
             if (!tcClient.IsConnected) return tcFunctionResult.TC_NOT_CONNECTED;
             if (Axis_MaxAxes <= 0) return tcFunctionResult.TC_NO_AXIS;
             if (index < 0 || index >= Axis_MaxAxes) return tcFunctionResult.TC_AXIS_OUTOFBOUND;
-
-            tcAxCommand[index].CONTROLLER_OVERRIDE = COMMAND.CONTROLLER_OVERRIDE;
-            tcAxCommand[index].SERVO_HOME = COMMAND.SERVO_HOME;
-            tcAxCommand[index].SERVO_JOG_BW_FAST = COMMAND.SERVO_JOG_BW_FAST;
-            tcAxCommand[index].SERVO_JOG_BW_SLOW = COMMAND.SERVO_JOG_BW_SLOW;
-            tcAxCommand[index].SERVO_JOG_FW_FAST = COMMAND.SERVO_JOG_FW_FAST;
-            tcAxCommand[index].SERVO_JOG_FW_SLOW = COMMAND.SERVO_JOG_FW_SLOW;
-            tcAxCommand[index].SERVO_JOG_MODE = COMMAND.SERVO_JOG_MODE;
-            tcAxCommand[index].SERVO_MOVE_ABS = COMMAND.SERVO_MOVE_ABS;
-            tcAxCommand[index].SERVO_MOVE_REL = COMMAND.SERVO_MOVE_REL;
-            tcAxCommand[index].SERVO_HALT = COMMAND.SERVO_HALT;
-            tcAxCommand[index].SERVO_OFF = COMMAND.SERVO_OFF;
-            tcAxCommand[index].SERVO_ON = COMMAND.SERVO_ON;
-            tcAxCommand[index].SERVO_ON_BW = COMMAND.SERVO_ON_BW;
-            tcAxCommand[index].SERVO_ON_FW = COMMAND.SERVO_ON_FW;
-            tcAxCommand[index].SERVO_RESET = COMMAND.SERVO_RESET;
-            tcAxCommand[index].TARGET_ACCELERATION = COMMAND.TARGET_ACCELERATION;
-            tcAxCommand[index].TARGET_DECELERATION = COMMAND.TARGET_DECELERATION;
-            tcAxCommand[index].TARGET_JERK = COMMAND.TARGET_JERK;
-            tcAxCommand[index].TARGET_POSITION = COMMAND.TARGET_POSITION;
-            tcAxCommand[index].TARGET_VELOCITY = COMMAND.TARGET_VELOCITY;
-
+            
             AdsStream _dataStream = new AdsStream(tcAxCommand[index].size);
             AdsBinaryWriter _dataWriter = new AdsBinaryWriter(_dataStream);
 
-            _dataWriter.Write(tcAxCommand[index].TARGET_POSITION);
-            _dataWriter.Write(tcAxCommand[index].TARGET_VELOCITY);
-            _dataWriter.Write(tcAxCommand[index].TARGET_ACCELERATION);
-            _dataWriter.Write(tcAxCommand[index].TARGET_DECELERATION);
-            _dataWriter.Write(tcAxCommand[index].TARGET_JERK);
-            _dataWriter.Write(tcAxCommand[index].CONTROLLER_OVERRIDE);
-            _dataWriter.Write(tcAxCommand[index].SERVO_ON);
-            _dataWriter.Write(tcAxCommand[index].SERVO_ON_BW);
-            _dataWriter.Write(tcAxCommand[index].SERVO_ON_FW);
-            _dataWriter.Write(tcAxCommand[index].SERVO_OFF);
-            _dataWriter.Write(tcAxCommand[index].SERVO_MOVE_ABS);
-            _dataWriter.Write(tcAxCommand[index].SERVO_MOVE_REL);
-            _dataWriter.Write(tcAxCommand[index].SERVO_HALT);
-            _dataWriter.Write(tcAxCommand[index].SERVO_HOME);
-            _dataWriter.Write(tcAxCommand[index].SERVO_RESET);
-            _dataWriter.Write(tcAxCommand[index].SERVO_JOG_MODE);
-            _dataWriter.Write(tcAxCommand[index].SERVO_JOG_FW_FAST);
-            _dataWriter.Write(tcAxCommand[index].SERVO_JOG_BW_FAST);
-            _dataWriter.Write(tcAxCommand[index].SERVO_JOG_FW_SLOW);
-            _dataWriter.Write(tcAxCommand[index].SERVO_JOG_BW_SLOW);
+            _dataWriter.Write(COMMAND.CONTROLLER_OVERRIDE);
+            _dataWriter.Write(COMMAND.TARGET_VELOCITY);
+            _dataWriter.Write(COMMAND.TARGET_ACCELERATION);
+            _dataWriter.Write(COMMAND.TARGET_DECELERATION);
+            _dataWriter.Write(COMMAND.TARGET_JERK);
+            _dataWriter.Write(COMMAND.CONTROLLER_OVERRIDE);
+            _dataWriter.Write(COMMAND.SERVO_ON);
+            _dataWriter.Write(COMMAND.SERVO_ON_BW);
+            _dataWriter.Write(COMMAND.SERVO_ON_FW);
+            _dataWriter.Write(COMMAND.SERVO_OFF);
+            _dataWriter.Write(COMMAND.SERVO_MOVE_ABS);
+            _dataWriter.Write(COMMAND.SERVO_MOVE_REL);
+            _dataWriter.Write(COMMAND.SERVO_HALT);
+            _dataWriter.Write(COMMAND.SERVO_HOME);
+            _dataWriter.Write(COMMAND.SERVO_RESET);
+            _dataWriter.Write(COMMAND.SERVO_JOG_MODE);
+            _dataWriter.Write(COMMAND.SERVO_JOG_FW_FAST);
+            _dataWriter.Write(COMMAND.SERVO_JOG_BW_FAST);
+            _dataWriter.Write(COMMAND.SERVO_JOG_FW_SLOW);
+            _dataWriter.Write(COMMAND.SERVO_JOG_BW_SLOW);
             try
             {
                 tcClient.Write(tcAxCommand[index].handle, _dataStream);

@@ -23,27 +23,12 @@ namespace ADS_Sample
         public MainWindow()
         {
             InitializeComponent();
-            ADS_Sample.UI_Config.SetupManager.Load_DiagConfig();
-            switch (TwincatConnector.tcConnect())
-            {
-                case tcFunctionResult.TC_SUCCESS:
-                    if (TwincatConnector.tcCreateHandle() == tcFunctionResult.TC_SUCCESS)
-                    {
-                    }
-                    else
-                    {
-                    }
-                    break;
-                case tcFunctionResult.TC_FAIL_TO_LOAD_PLC_CONFIG:
-                    break;
-                case tcFunctionResult.TC_FAIL_TO_CONNECT_DEVICE:
-                    break;
-            }
+            ADS_Sample.UI_Config.ui_manager.Load_DiagConfig();
         }
 
         private void navi_diagnostic_Click(object sender, RoutedEventArgs e)
         {
-            ContentFrame.Navigate(new DiagnosticPage());
+            ContentFrame.Navigate(new Diagnostics());
         }
 
         private void navi_main_Click(object sender, RoutedEventArgs e)
@@ -53,7 +38,6 @@ namespace ADS_Sample
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            TwincatConnector.tcDispose();
         }
     }
 }

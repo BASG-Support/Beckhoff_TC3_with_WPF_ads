@@ -64,11 +64,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Diagnostic\Diagnostics.xaml.cs">
+      <DependentUpon>Diagnostics.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Diagnostic\AxisDiagnostic.xaml.cs">
       <DependentUpon>AxisDiagnostic.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TwinCATConnector\Connector_Defines.cs" />
+    <Compile Include="TwinCATConnector\Connector_LogManager.cs" />
+    <Compile Include="TwinCATConnector\IO_Connector.cs" />
     <Compile Include="TwinCATConnector\TwincatConnector.cs" />
-    <Compile Include="UI Config\SetupManager.cs" />
+    <Compile Include="UI Config\applog_manager.cs" />
+    <Compile Include="UI Config\ui_manager.cs" />
+    <Page Include="Diagnostic\Diagnostics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Diagnostic\AxisDiagnostic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -135,6 +146,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="UI Config\tcConnectorConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <SplashScreen Include="Splash\Splash.png" />
     <Content Include="UI Config\DiagPageConfig.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

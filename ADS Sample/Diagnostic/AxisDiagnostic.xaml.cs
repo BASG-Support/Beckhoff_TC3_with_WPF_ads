@@ -97,9 +97,9 @@ namespace ADS_Sample
             public Axis_HmiToPlc COMMAND { get; set; }
             public int ID { get; set; }
         }
+        public event EventHandler<AxisDiagnosticClickEventArgs> NewCommand;
         #endregion
         #region Controller
-        public event EventHandler<AxisDiagnosticClickEventArgs> ControlSetClicked;
         private void ControlSet_Click(object sender, RoutedEventArgs e)
         {
             AxisDiagnosticClickEventArgs _AxisDiagnosticEvent = new AxisDiagnosticClickEventArgs();
@@ -135,11 +135,10 @@ namespace ADS_Sample
             _AxisDiagnosticEvent.COMMAND.SERVO_HALT = false;
             #endregion
 
-            if (ControlSetClicked != null) ControlSetClicked(this, _AxisDiagnosticEvent);
+            if (NewCommand != null) NewCommand(this, _AxisDiagnosticEvent);
         }
         #endregion
         #region Jog modes
-        public event EventHandler<AxisDiagnosticClickEventArgs> JogFwFastClicked;
         private void JogFwFast_MouseDown(object sender, MouseButtonEventArgs e)
         {
             AxisDiagnosticClickEventArgs _AxisDiagnosticEvent = new AxisDiagnosticClickEventArgs();
@@ -175,7 +174,7 @@ namespace ADS_Sample
             _AxisDiagnosticEvent.COMMAND.SERVO_HALT = false;
             #endregion
 
-            if (JogFwFastClicked != null) JogFwFastClicked(this, _AxisDiagnosticEvent);
+            if (NewCommand != null) NewCommand(this, _AxisDiagnosticEvent);
         }
         private void JogFwFast_MouseUp(object sender, MouseButtonEventArgs e)
         {
@@ -212,10 +211,9 @@ namespace ADS_Sample
             _AxisDiagnosticEvent.COMMAND.SERVO_HALT = false;
             #endregion
 
-            if (JogFwFastClicked != null) JogFwFastClicked(this, _AxisDiagnosticEvent);
+            if (NewCommand != null) NewCommand(this, _AxisDiagnosticEvent);
         }
 
-        public event EventHandler<AxisDiagnosticClickEventArgs> JogBwFastClicked;
         private void JogBwFast_MouseDown(object sender, MouseButtonEventArgs e)
         {
             AxisDiagnosticClickEventArgs _AxisDiagnosticEvent = new AxisDiagnosticClickEventArgs();
@@ -251,7 +249,7 @@ namespace ADS_Sample
             _AxisDiagnosticEvent.COMMAND.SERVO_HALT = false;
             #endregion
 
-            if (JogBwFastClicked != null) JogBwFastClicked(this, _AxisDiagnosticEvent);
+            if (NewCommand != null) NewCommand(this, _AxisDiagnosticEvent);
         }
         private void JogBwFast_MouseUp(object sender, MouseButtonEventArgs e)
         {
@@ -288,10 +286,9 @@ namespace ADS_Sample
             _AxisDiagnosticEvent.COMMAND.SERVO_HALT = false;
             #endregion
 
-            if (JogBwFastClicked != null) JogBwFastClicked(this, _AxisDiagnosticEvent);
+            if (NewCommand != null) NewCommand(this, _AxisDiagnosticEvent);
         }
 
-        public event EventHandler<AxisDiagnosticClickEventArgs> JogFwSlowClicked;
         private void JogFwSlow_MouseDown(object sender, MouseButtonEventArgs e)
         {
             AxisDiagnosticClickEventArgs _AxisDiagnosticEvent = new AxisDiagnosticClickEventArgs();
@@ -327,7 +324,7 @@ namespace ADS_Sample
             _AxisDiagnosticEvent.COMMAND.SERVO_HALT = false;
             #endregion
 
-            if (JogFwSlowClicked != null) JogFwSlowClicked(this, _AxisDiagnosticEvent);
+            if (NewCommand != null) NewCommand(this, _AxisDiagnosticEvent);
         }
         private void JogFwSlow_MouseUp(object sender, MouseButtonEventArgs e)
         {
@@ -364,10 +361,9 @@ namespace ADS_Sample
             _AxisDiagnosticEvent.COMMAND.SERVO_HALT = false;
             #endregion
 
-            if (JogFwSlowClicked != null) JogFwSlowClicked(this, _AxisDiagnosticEvent);
+            if (NewCommand != null) NewCommand(this, _AxisDiagnosticEvent);
         }
 
-        public event EventHandler<AxisDiagnosticClickEventArgs> JogBwSlowClicked;
         private void JogBwSlow_MouseDown(object sender, MouseButtonEventArgs e)
         {
             AxisDiagnosticClickEventArgs _AxisDiagnosticEvent = new AxisDiagnosticClickEventArgs();
@@ -403,7 +399,7 @@ namespace ADS_Sample
             _AxisDiagnosticEvent.COMMAND.SERVO_HALT = false;
             #endregion
 
-            if (JogBwSlowClicked != null) JogBwSlowClicked(this, _AxisDiagnosticEvent);
+            if (NewCommand != null) NewCommand(this, _AxisDiagnosticEvent);
         }
         private void JogBwSlow_MouseUp(object sender, MouseButtonEventArgs e)
         {
@@ -440,11 +436,10 @@ namespace ADS_Sample
             _AxisDiagnosticEvent.COMMAND.SERVO_HALT = false;
             #endregion
 
-            if (JogBwSlowClicked != null) JogBwSlowClicked(this, _AxisDiagnosticEvent);
+            if (NewCommand != null) NewCommand(this, _AxisDiagnosticEvent);
         }
         #endregion
         #region Reset button
-        public event EventHandler<AxisDiagnosticClickEventArgs> ResetClicked;
         private void AxisReset_Click(object sender, RoutedEventArgs e)
         {
             AxisDiagnosticClickEventArgs _AxisDiagnosticEvent = new AxisDiagnosticClickEventArgs();
@@ -480,11 +475,10 @@ namespace ADS_Sample
             _AxisDiagnosticEvent.COMMAND.SERVO_HALT = false;
             #endregion
 
-            if (ResetClicked != null) ResetClicked(this, _AxisDiagnosticEvent);
+            if (NewCommand != null) NewCommand(this, _AxisDiagnosticEvent);
         }
         #endregion
         #region Move Buttons
-        public event EventHandler<AxisDiagnosticClickEventArgs> MoveAbsClicked;
         private void Move_Abs_Click(object sender, RoutedEventArgs e)
         {
             AxisDiagnosticClickEventArgs _AxisDiagnosticEvent = new AxisDiagnosticClickEventArgs();
@@ -521,10 +515,9 @@ namespace ADS_Sample
             _AxisDiagnosticEvent.COMMAND.SERVO_HALT = false;
             #endregion
 
-            if (MoveAbsClicked != null) MoveAbsClicked(this, _AxisDiagnosticEvent);
+            if (NewCommand != null) NewCommand(this, _AxisDiagnosticEvent);
         }
 
-        public event EventHandler<AxisDiagnosticClickEventArgs> MoveRelClicked;
         private void Move_Rel_Click(object sender, RoutedEventArgs e)
         {
             AxisDiagnosticClickEventArgs _AxisDiagnosticEvent = new AxisDiagnosticClickEventArgs();
@@ -561,11 +554,10 @@ namespace ADS_Sample
             _AxisDiagnosticEvent.COMMAND.SERVO_HALT = false;
             #endregion
 
-            if (MoveRelClicked != null) MoveRelClicked(this, _AxisDiagnosticEvent);
+            if (NewCommand != null) NewCommand(this, _AxisDiagnosticEvent);
         }
         #endregion
         #region Halt button
-        public event EventHandler<AxisDiagnosticClickEventArgs> HaltClicked;
         private void Halt_Click(object sender, RoutedEventArgs e)
         {
             AxisDiagnosticClickEventArgs _AxisDiagnosticEvent = new AxisDiagnosticClickEventArgs();
@@ -599,10 +591,10 @@ namespace ADS_Sample
             _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_ABS = false;
             _AxisDiagnosticEvent.COMMAND.SERVO_MOVE_REL = false;
             _AxisDiagnosticEvent.COMMAND.SERVO_RESET = false;
-            _AxisDiagnosticEvent.COMMAND.SERVO_HALT = false;
+            _AxisDiagnosticEvent.COMMAND.SERVO_HALT = true;
             #endregion
 
-            if (HaltClicked != null) HaltClicked(this, _AxisDiagnosticEvent);
+            if (NewCommand != null) NewCommand(this, _AxisDiagnosticEvent);
         }
         #endregion
     }

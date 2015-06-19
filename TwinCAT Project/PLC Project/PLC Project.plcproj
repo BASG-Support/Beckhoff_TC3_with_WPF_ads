@@ -20,13 +20,13 @@
     <Compile Include="DUTs\Motion_AxisGroup.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DUTs\Motion_FunctionResult.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\Motion_HmiToPlc.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\Motion_PlcToHmi.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\ServoMotion_FunctionResult.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GVLs\IO_DigiIn_GVL.TcGVL">
@@ -35,10 +35,10 @@
     <Compile Include="GVLs\IO_DigiOut_GVL.TcGVL">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GVLs\ServoMotion_GVL.TcGVL">
+    <Compile Include="GVLs\Motion_GVL.TcGVL">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GVLs\ServoMotion_Parameters.TcGVL">
+    <Compile Include="GVLs\Motion_Parameters.TcGVL">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="PlcTask.TcTTO">
@@ -47,7 +47,7 @@
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Servo.TcPOU">
+    <Compile Include="POUs\MotionControl.TcPOU">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
