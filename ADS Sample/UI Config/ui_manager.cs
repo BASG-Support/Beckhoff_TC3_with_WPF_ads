@@ -14,7 +14,9 @@ namespace ADS_Sample.UI_Config
         {
             XDocument DiagConfig = XDocument.Parse("<Diagnostic></Diagnostic>");
             XDocument PlcConfig = XDocument.Load(@"UI Config/tcConnectorConfig.xml");
-
+            XDocument UiConfig = XDocument.Load(@"UI Config/UiConfig.xml");
+            #region Diagnostics
+            #region IO
             int _plcINDEX = 0;
             foreach (XElement Plc in PlcConfig.Root.Descendants("Plc"))
             {
@@ -72,7 +74,20 @@ namespace ADS_Sample.UI_Config
                 #endregion
                 _plcINDEX++;
             }
+            #endregion
+            #region Polling interval
+            try
+            {
+                DiagConfig.Root.Add(new XElement("Polling",new XElement("m",UiConfig.Root.Element("PollTime").Attribute("m").Value),new XElement("s",UiConfig.Root.Element("PollTime").Attribute("s").Value),new XElement("ms",UiConfig.Root.Element("PollTime").Attribute("ms").Value)));
+            }
+            catch (Exception)
+            {
+                DiagConfig.Root.Add(new XElement("Polling", new XElement("m", 0), new XElement("s", 0), new XElement("ms", 500)));
+                applog_manager.appLogMessage("UC", "Unable to get diagnostics polling config, defaulting to 500ms");
+            }
             DiagConfig.Save("UI Config/DiagPageConfig.xml");
+            #endregion
+            #endregion
         }
     }
 }
