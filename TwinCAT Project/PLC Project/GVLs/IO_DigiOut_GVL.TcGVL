@@ -2,7 +2,7 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.36">
   <GVL Name="IO_DigiOut_GVL" Id="{de4775a9-03ff-4acb-85b8-047d20026ef0}">
     <Declaration><![CDATA[VAR_GLOBAL
-	Digital_Output AT %Q* : ARRAY [1..10] OF BOOL;
+	Digital_Output AT %Q* : ARRAY [1..100] OF BOOL;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

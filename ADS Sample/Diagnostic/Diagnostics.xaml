@@ -12,23 +12,33 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
-        <TabControl x:Name="MainContent" HorizontalAlignment="Stretch" Margin="0" VerticalAlignment="Stretch" Grid.Row="0" SelectionChanged="MainContent_SelectionChanged">
+        <TabControl x:Name="MainContent" HorizontalAlignment="Stretch" Margin="0" VerticalAlignment="Stretch" Grid.Row="0">
             <TabItem Header="IO">
                 <Grid Background="#FFE5E5E5">
-                    <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
-                        <WrapPanel x:Name="DoContent" Orientation="Vertical" Margin="5,0,5,0">
-                            <Label Content="Digital Outputs" BorderBrush="Black" BorderThickness="2"/>
-                        </WrapPanel>
-                        <WrapPanel x:Name="DiContent" Orientation="Vertical" Margin="5,0,5,0">
-                            <Label Content="Digital Inputs" BorderBrush="Black" BorderThickness="2"/>
-                        </WrapPanel>
-                        <WrapPanel x:Name="AoContent" Orientation="Vertical" Margin="5,0,5,0">
-                            <Label Content="Analog Outputs" BorderBrush="Black" BorderThickness="2"/>
-                        </WrapPanel>
-                        <WrapPanel x:Name="AiContent" Orientation="Vertical" Margin="5,0,5,0">
-                            <Label Content="Analog Inputs" BorderBrush="Black" BorderThickness="2"/>
-                        </WrapPanel>
-                    </StackPanel>
+                    <ScrollViewer >
+                        <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
+                            <ScrollViewer Width="175" Margin="0,0,0,0" VerticalAlignment="Stretch">
+                                <WrapPanel x:Name="DoContent" Orientation="Vertical" Margin="5,0,5,0">
+                                    <Label Content="Digital Outputs" BorderBrush="Black" BorderThickness="2"/>
+                                </WrapPanel>
+                            </ScrollViewer>
+                            <ScrollViewer Width="175" Margin="0,0,0,0" VerticalAlignment="Stretch">
+                                <WrapPanel x:Name="DiContent" Orientation="Vertical" Margin="5,0,5,0">
+                                    <Label Content="Digital Inputs" BorderBrush="Black" BorderThickness="2"/>
+                                </WrapPanel>
+                            </ScrollViewer>
+                            <ScrollViewer Width="175" Margin="0,0,0,0" VerticalAlignment="Stretch">
+                                <WrapPanel x:Name="AoContent" Orientation="Vertical" Margin="5,0,5,0">
+                                    <Label Content="Analog Outputs" BorderBrush="Black" BorderThickness="2"/>
+                                </WrapPanel>
+                            </ScrollViewer>
+                            <ScrollViewer Width="175" Margin="0,0,0,0" VerticalAlignment="Stretch">
+                                <WrapPanel x:Name="AiContent" Orientation="Vertical" Margin="5,0,5,0">
+                                    <Label Content="Analog Inputs" BorderBrush="Black" BorderThickness="2"/>
+                                </WrapPanel>
+                            </ScrollViewer>
+                        </StackPanel>
+                    </ScrollViewer>
                 </Grid>
             </TabItem>
         </TabControl>

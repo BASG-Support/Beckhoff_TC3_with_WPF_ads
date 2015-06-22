@@ -18,11 +18,11 @@ namespace ADS_Sample
 
     public partial class AxisDiagnostic : UserControl
     {
-        private Axis_PlcToHmi _internAxisRef = new Axis_PlcToHmi();
+        private BASG.TwinCATConnector.Axis_PlcToHmi _internAxisRef = new BASG.TwinCATConnector.Axis_PlcToHmi();
         //private Axis_HmiToPlc _internHmiToPlc = new Axis_HmiToPlc();
 
         #region Properties
-        public Axis_PlcToHmi AxisStatus
+        public BASG.TwinCATConnector.Axis_PlcToHmi AxisStatus
         {
             set
             {
@@ -94,7 +94,7 @@ namespace ADS_Sample
         #region Event handler
         public class AxisDiagnosticClickEventArgs : EventArgs
         {
-            public Axis_HmiToPlc COMMAND { get; set; }
+            public BASG.TwinCATConnector.Axis_HmiToPlc COMMAND { get; set; }
             public int ID { get; set; }
         }
         public event EventHandler<AxisDiagnosticClickEventArgs> NewCommand;
@@ -103,7 +103,7 @@ namespace ADS_Sample
         private void ControlSet_Click(object sender, RoutedEventArgs e)
         {
             AxisDiagnosticClickEventArgs _AxisDiagnosticEvent = new AxisDiagnosticClickEventArgs();
-            _AxisDiagnosticEvent.COMMAND = new Axis_HmiToPlc();
+            _AxisDiagnosticEvent.COMMAND = new BASG.TwinCATConnector.Axis_HmiToPlc();
             _AxisDiagnosticEvent.ID = this.ID;
 
             #region Servo Enable/Disable
@@ -142,7 +142,7 @@ namespace ADS_Sample
         private void JogFwFast_MouseDown(object sender, MouseButtonEventArgs e)
         {
             AxisDiagnosticClickEventArgs _AxisDiagnosticEvent = new AxisDiagnosticClickEventArgs();
-            _AxisDiagnosticEvent.COMMAND = new Axis_HmiToPlc();
+            _AxisDiagnosticEvent.COMMAND = new BASG.TwinCATConnector.Axis_HmiToPlc();
             _AxisDiagnosticEvent.ID = this.ID;
 
             #region Servo Enable/Disable
@@ -179,7 +179,7 @@ namespace ADS_Sample
         private void JogFwFast_MouseUp(object sender, MouseButtonEventArgs e)
         {
             AxisDiagnosticClickEventArgs _AxisDiagnosticEvent = new AxisDiagnosticClickEventArgs();
-            _AxisDiagnosticEvent.COMMAND = new Axis_HmiToPlc();
+            _AxisDiagnosticEvent.COMMAND = new BASG.TwinCATConnector.Axis_HmiToPlc();
             _AxisDiagnosticEvent.ID = this.ID;
 
             #region Servo Enable/Disable
@@ -217,7 +217,7 @@ namespace ADS_Sample
         private void JogBwFast_MouseDown(object sender, MouseButtonEventArgs e)
         {
             AxisDiagnosticClickEventArgs _AxisDiagnosticEvent = new AxisDiagnosticClickEventArgs();
-            _AxisDiagnosticEvent.COMMAND = new Axis_HmiToPlc();
+            _AxisDiagnosticEvent.COMMAND = new BASG.TwinCATConnector.Axis_HmiToPlc();
             _AxisDiagnosticEvent.ID = this.ID;
 
             #region Servo Enable/Disable
@@ -254,7 +254,7 @@ namespace ADS_Sample
         private void JogBwFast_MouseUp(object sender, MouseButtonEventArgs e)
         {
             AxisDiagnosticClickEventArgs _AxisDiagnosticEvent = new AxisDiagnosticClickEventArgs();
-            _AxisDiagnosticEvent.COMMAND = new Axis_HmiToPlc();
+            _AxisDiagnosticEvent.COMMAND = new BASG.TwinCATConnector.Axis_HmiToPlc();
             _AxisDiagnosticEvent.ID = this.ID;
 
             #region Servo Enable/Disable
@@ -292,7 +292,7 @@ namespace ADS_Sample
         private void JogFwSlow_MouseDown(object sender, MouseButtonEventArgs e)
         {
             AxisDiagnosticClickEventArgs _AxisDiagnosticEvent = new AxisDiagnosticClickEventArgs();
-            _AxisDiagnosticEvent.COMMAND = new Axis_HmiToPlc();
+            _AxisDiagnosticEvent.COMMAND = new BASG.TwinCATConnector.Axis_HmiToPlc();
             _AxisDiagnosticEvent.ID = this.ID;
 
             #region Servo Enable/Disable
@@ -329,7 +329,7 @@ namespace ADS_Sample
         private void JogFwSlow_MouseUp(object sender, MouseButtonEventArgs e)
         {
             AxisDiagnosticClickEventArgs _AxisDiagnosticEvent = new AxisDiagnosticClickEventArgs();
-            _AxisDiagnosticEvent.COMMAND = new Axis_HmiToPlc();
+            _AxisDiagnosticEvent.COMMAND = new BASG.TwinCATConnector.Axis_HmiToPlc();
             _AxisDiagnosticEvent.ID = this.ID;
 
             #region Servo Enable/Disable
@@ -367,7 +367,7 @@ namespace ADS_Sample
         private void JogBwSlow_MouseDown(object sender, MouseButtonEventArgs e)
         {
             AxisDiagnosticClickEventArgs _AxisDiagnosticEvent = new AxisDiagnosticClickEventArgs();
-            _AxisDiagnosticEvent.COMMAND = new Axis_HmiToPlc();
+            _AxisDiagnosticEvent.COMMAND = new BASG.TwinCATConnector.Axis_HmiToPlc();
             _AxisDiagnosticEvent.ID = this.ID;
 
             #region Servo Enable/Disable
@@ -404,7 +404,7 @@ namespace ADS_Sample
         private void JogBwSlow_MouseUp(object sender, MouseButtonEventArgs e)
         {
             AxisDiagnosticClickEventArgs _AxisDiagnosticEvent = new AxisDiagnosticClickEventArgs();
-            _AxisDiagnosticEvent.COMMAND = new Axis_HmiToPlc();
+            _AxisDiagnosticEvent.COMMAND = new BASG.TwinCATConnector.Axis_HmiToPlc();
             _AxisDiagnosticEvent.ID = this.ID;
 
             #region Servo Enable/Disable
@@ -443,7 +443,7 @@ namespace ADS_Sample
         private void AxisReset_Click(object sender, RoutedEventArgs e)
         {
             AxisDiagnosticClickEventArgs _AxisDiagnosticEvent = new AxisDiagnosticClickEventArgs();
-            _AxisDiagnosticEvent.COMMAND = new Axis_HmiToPlc();
+            _AxisDiagnosticEvent.COMMAND = new BASG.TwinCATConnector.Axis_HmiToPlc();
             _AxisDiagnosticEvent.ID = this.ID;
 
             #region Servo Enable/Disable
@@ -482,7 +482,7 @@ namespace ADS_Sample
         private void Move_Abs_Click(object sender, RoutedEventArgs e)
         {
             AxisDiagnosticClickEventArgs _AxisDiagnosticEvent = new AxisDiagnosticClickEventArgs();
-            _AxisDiagnosticEvent.COMMAND = new Axis_HmiToPlc();
+            _AxisDiagnosticEvent.COMMAND = new BASG.TwinCATConnector.Axis_HmiToPlc();
             _AxisDiagnosticEvent.ID = this.ID;
 
             #region Servo Enable/Disable
@@ -521,7 +521,7 @@ namespace ADS_Sample
         private void Move_Rel_Click(object sender, RoutedEventArgs e)
         {
             AxisDiagnosticClickEventArgs _AxisDiagnosticEvent = new AxisDiagnosticClickEventArgs();
-            _AxisDiagnosticEvent.COMMAND = new Axis_HmiToPlc();
+            _AxisDiagnosticEvent.COMMAND = new BASG.TwinCATConnector.Axis_HmiToPlc();
             _AxisDiagnosticEvent.ID = this.ID;
 
             #region Servo Enable/Disable
@@ -561,7 +561,7 @@ namespace ADS_Sample
         private void Halt_Click(object sender, RoutedEventArgs e)
         {
             AxisDiagnosticClickEventArgs _AxisDiagnosticEvent = new AxisDiagnosticClickEventArgs();
-            _AxisDiagnosticEvent.COMMAND = new Axis_HmiToPlc();
+            _AxisDiagnosticEvent.COMMAND = new BASG.TwinCATConnector.Axis_HmiToPlc();
             _AxisDiagnosticEvent.ID = this.ID;
 
             #region Servo Enable/Disable

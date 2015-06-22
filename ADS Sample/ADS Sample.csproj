@@ -70,10 +70,10 @@
     <Compile Include="Diagnostic\AxisDiagnostic.xaml.cs">
       <DependentUpon>AxisDiagnostic.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TwinCATConnector\AX_Connector.cs" />
     <Compile Include="TwinCATConnector\Connector_Defines.cs" />
     <Compile Include="TwinCATConnector\Connector_LogManager.cs" />
     <Compile Include="TwinCATConnector\IO_Connector.cs" />
-    <Compile Include="TwinCATConnector\TwincatConnector.cs" />
     <Compile Include="UI Config\applog_manager.cs" />
     <Compile Include="UI Config\ui_manager.cs" />
     <Page Include="Diagnostic\Diagnostics.xaml">
@@ -85,10 +85,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Diagnostic\DigitalIndicator.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Diagnostic\DiagnosticPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -106,9 +102,6 @@
     </Compile>
     <Compile Include="Diagnostic\DigitalIndicator.xaml.cs">
       <DependentUpon>DigitalIndicator.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Diagnostic\DiagnosticPage.xaml.cs">
-      <DependentUpon>DiagnosticPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Main\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>

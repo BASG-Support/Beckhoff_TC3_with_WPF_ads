@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="50" d:DesignWidth="50"
-             Width="175" Height="30">
+             Width="150" Height="30">
     <Grid>
         <Ellipse x:Name="StateIndicator" Fill="Gray" Margin="0" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Right" Width="25" Height="25"/>
         <Label x:Name="IndicatorLabel" Content="Label" VerticalAlignment="Center" HorizontalAlignment="Left" />

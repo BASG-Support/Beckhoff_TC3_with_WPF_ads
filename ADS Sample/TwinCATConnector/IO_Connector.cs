@@ -254,5 +254,12 @@ namespace BASG.TwinCATConnector
             }
         }
         #endregion
+
+        #region IsConnected
+        public bool IsConnected(int PLC)
+        {
+            return ioClient[PLC].IsConnected;
+        }
+        #endregion
     }
 }

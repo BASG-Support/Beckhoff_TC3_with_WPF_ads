@@ -6,11 +6,46 @@
     <PlcVar Name="IO_DigiOut_GVL.Digital_Output[3]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="2"/>
     <PlcVar Name="IO_DigiOut_GVL.Digital_Output[4]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="3"/>
     <PlcVar Name="IO_DigiOut_GVL.Digital_Output[5]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="4"/>
-    <PlcVar Name="IO_DigiIn_GVL.Digital_Input[1]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DI" Index="5"/>
-    <PlcVar Name="IO_DigiIn_GVL.Digital_Input[2]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DI" Index="6"/>
-    <PlcVar Name="IO_DigiIn_GVL.Digital_Input[3]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DI" Index="7"/>
-    <PlcVar Name="IO_DigiIn_GVL.Digital_Input[4]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DI" Index="8"/>
-    <PlcVar Name="IO_DigiIn_GVL.Digital_Input[5]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DI" Index="9"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[6]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="5"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[7]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="6"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[8]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="7"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[9]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="8"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[10]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="9"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[11]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="10"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[12]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="11"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[13]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="12"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[14]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="13"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[15]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="14"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[16]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="15"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[17]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="16"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[18]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="17"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[19]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="18"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[20]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="19"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[21]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="20"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[22]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="21"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[23]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="22"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[24]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="23"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[25]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="24"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[26]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="25"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[27]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="26"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[28]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="27"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[29]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="28"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[30]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="29"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[31]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="30"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[32]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="31"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[33]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="32"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[34]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="33"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[35]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="34"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[36]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="35"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[37]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="36"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[38]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="37"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[39]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="38"/>
+    <PlcVar Name="IO_DigiOut_GVL.Digital_Output[40]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DO" Index="39"/>
+    <PlcVar Name="IO_DigiIn_GVL.Digital_Input[1]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DI" Index="40"/>
+    <PlcVar Name="IO_DigiIn_GVL.Digital_Input[2]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DI" Index="41"/>
+    <PlcVar Name="IO_DigiIn_GVL.Digital_Input[3]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DI" Index="42"/>
+    <PlcVar Name="IO_DigiIn_GVL.Digital_Input[4]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DI" Index="43"/>
+    <PlcVar Name="IO_DigiIn_GVL.Digital_Input[5]" Type="BOOL" Size="1" Count="1" Tag="DIAGNOSTIC_DI" Index="44"/>
     <AxsVar Count="Motion_Parameters.MAX_AXES" PlcToHmi="Motion_GVL.PlcToHmi" P2HSize="56" HmiToPlc="Motion_GVL.HmiToPlc" H2PSize="64"/>
   </Plc>
 </root>
